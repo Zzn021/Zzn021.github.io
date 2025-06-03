@@ -21,10 +21,11 @@
 title: Zzn021.github.io
 email: harry020102@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my githubio where you can get know more from me :)
+  Welcome to my GitHub Pages, where you can learn more about my work and interests :)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
+linkedin_display_name: Zeneng Zhao
+linkedin_username: zeneng-zhao-5129a3223
 github_username:  Zzn021
 
 # Build settings
