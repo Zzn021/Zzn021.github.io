@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Maoze Jekyll!"
+title:  "Test post"
 date:   2024-02-23 22:50:22 +1100
 categories: blog
 tags: uni

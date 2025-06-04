@@ -1,30 +1,15 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2024-01-30 22:50:22 +1100
+title:  "Welcome to My Github.io Page!"
+date:   2024-01-04 22:50:22 +1100
 categories: blog
-tags: comp3311
+tags: 
+permalink: greeting
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+If you're into photography, feel free to check out my work on [Instagram][ins-account]. You can also reach out to me anytime via [Linkedin][linkedin-account] or [email](mailto:harry020102@gmail.com) — I'd love to connect!
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[ins-account]: https://www.instagram.com/zenengz_0214/
+[linkedin-account]: https://www.linkedin.com/in/zeneng-zhao-5129a3223
