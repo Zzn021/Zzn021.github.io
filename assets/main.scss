@@ -1,0 +1,20 @@
+---
+---
+
+@import "minima";
+
+.post-cate {
+    display: inline-block;
+    text-align: left;
+    position: relative;
+
+    span {
+        border-radius: 5.5px;
+        padding: 1px 5.4px;
+        border: 1px solid #ccc;
+        text-transform: lowercase;
+        font-weight: 500;
+        font-size: 12px;
+        color: #878686;
+    }
+}
