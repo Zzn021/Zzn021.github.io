@@ -668,4 +668,35 @@ table td {
   text-transform: none;
 }
 
+.album-grid {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+.album-card {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 2rem;
+  height: 100%;
+  overflow: hidden;
+}
+.album-card .album-title {
+  text-align: center;
+  color: #131312;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.album-card:hover {
+  text-decoration: none;
+}
+.album-card img.album-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -2,5 +2,24 @@
 layout: default
 ---
 
+<div>
+    <h2 class="post-list-heading">{{ page.title }}</h2>
+    {% assign albums = site.categories.photography %}
+    <div class="album-grid">
+        {% for album in albums %}
+            <!-- <a href="{{ album.url | relative_url }}">
+                <img src="{{ album.cover | escape }}">
+                <h4>{{album.title | escape}}</h4>
+            </a> -->
+
+            <a class="album-card" href="{{ album.url | relative_url }}">
+                <div class="album-content">
+                    <img class="album-cover" src="{{ album.cover | escape }}" alt="{{ album.title }}">
+                    <h4 class="album-title">{{ album.title | escape }}</h4>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
 <!-- Show albums -->
     <!-- show photos in albums-->
