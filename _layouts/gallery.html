@@ -17,6 +17,15 @@ layout: default
 </div>
 
 <script>
+    function formatExposureTime(seconds) {
+        if (seconds >= 1) {
+            return `${seconds.toFixed(1)}s`;
+        } else {
+            const denominator = Math.round(1 / seconds);
+            return `1/${denominator} sec`;
+        }
+    }
+
     const overlay = document.getElementById("lightbox-overlay");
     const overlayImage = document.getElementById("lightbox-image");
     const overlayMeta = document.getElementById("lightbox-meta");
@@ -37,10 +46,11 @@ layout: default
                     const iso = EXIF.getTag(this, "ISOSpeedRatings") || "—";
                     const fstop = EXIF.getTag(this, "FNumber") || "—";
                     const exposure = EXIF.getTag(this, "ExposureTime") || "—";
-
+                    const formattedExposure = exposure ? formatExposureTime(exposure) : "—";
                     overlayMeta.innerHTML = `
                     <strong>${make} ${model}</strong><br>
-                    ISO: ${iso} | f/${fstop} | ${exposure}s<br>
+                    ISO: ${iso} | f/${fstop} | ${formattedExposure}<br>
+                    Zeneng Zhao
                     `;
                 });
             });

@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/photography/wild-life" />
 <meta property="og:site_name" content="Zzn021.github.io" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="1999-01-01T00:00:00+11:00" />
+<meta property="article:published_time" content="2000-01-01T00:00:00+11:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Wild Life" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Zeneng Zhao"},"dateModified":"1999-01-01T00:00:00+11:00","datePublished":"1999-01-01T00:00:00+11:00","description":"Welcome to my personal website, where you can learn more about me :)","headline":"Wild Life","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/photography/wild-life"},"url":"http://localhost:4000/photography/wild-life"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Zeneng Zhao"},"dateModified":"2000-01-01T00:00:00+11:00","datePublished":"2000-01-01T00:00:00+11:00","description":"Welcome to my personal website, where you can learn more about me :)","headline":"Wild Life","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/photography/wild-life"},"url":"http://localhost:4000/photography/wild-life"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Zzn021.github.io" /></head>
 <body><header class="site-header" role="banner">
@@ -38,8 +38,74 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        
+        <div>
+    <h2 class="post-list-heading">Wild Life</h2>
 
+    <div class="gallery">
+    <img src="/assets/image/photos/wild-life/DSCF6873-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
+    <img src="/assets/image/photos/wild-life/D03CDA30-9261-4988-8AEB-751621294F73-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
+    <img src="/assets/image/photos/wild-life/DSCF7044-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
+</div>
+
+    
+    <div id="lightbox-overlay" class="hidden">
+        <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-meta" class="meta-info"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function formatExposureTime(seconds) {
+        if (seconds >= 1) {
+            return `${seconds.toFixed(1)}s`;
+        } else {
+            const denominator = Math.round(1 / seconds);
+            return `1/${denominator} sec`;
+        }
+    }
+
+    const overlay = document.getElementById("lightbox-overlay");
+    const overlayImage = document.getElementById("lightbox-image");
+    const overlayMeta = document.getElementById("lightbox-meta");
+
+    document.querySelectorAll(".lightbox-trigger").forEach(img => {
+        img.addEventListener("click", () => {
+            overlayImage.src = img.src;
+            overlay.classList.remove("hidden");
+
+            // Fetch EXIF data
+            overlayMeta.innerHTML = "Loading EXIF...";
+            fetch(img.src)
+            .then(response => response.blob())
+            .then(blob => {
+                EXIF.getData(blob, function () {
+                    const make = EXIF.getTag(this, "Make") || "Unknown";
+                    const model = EXIF.getTag(this, "Model") || "";
+                    const iso = EXIF.getTag(this, "ISOSpeedRatings") || "—";
+                    const fstop = EXIF.getTag(this, "FNumber") || "—";
+                    const exposure = EXIF.getTag(this, "ExposureTime") || "—";
+                    const formattedExposure = exposure ? formatExposureTime(exposure) : "—";
+                    overlayMeta.innerHTML = `
+                    <strong>${make} ${model}</strong><br>
+                    ISO: ${iso} | f/${fstop} | ${formattedExposure}<br>
+                    Zeneng Zhao
+                    `;
+                });
+            });
+        });
+    });
+
+    // Clicking the backdrop closes the overlay
+    document.querySelector(".lightbox-backdrop").addEventListener("click", () => {
+        overlay.classList.add("hidden");
+        overlayImage.src = "";
+        overlayMeta.innerHTML = "";
+    });
+</script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>

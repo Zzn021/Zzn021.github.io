@@ -57,6 +57,7 @@
 
 	&:hover {
 		text-decoration: none;
+		cursor: pointer;
 	}
 	
 	img.album-cover {
@@ -121,9 +122,12 @@
 }
 
 #lightbox-image {
-	max-width: 70%;
-	max-height: 70%;
+	max-width: 80vw;
+	max-height: 80vh;
 	z-index: 1000;
+	height: auto;
+	width: auto;
+	object-fit: contain;
 }
 
 #lightbox-meta {
