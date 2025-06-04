@@ -699,4 +699,62 @@ table td {
   display: block;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.2s ease;
+}
+
+#lightbox-overlay.hidden {
+  display: none;
+}
+
+#lightbox-image {
+  max-width: 70%;
+  max-height: 70%;
+  z-index: 1000;
+}
+
+#lightbox-meta {
+  margin-top: 1rem;
+  color: #eee;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */
