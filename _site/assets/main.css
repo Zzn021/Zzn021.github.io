@@ -711,6 +711,25 @@ table td {
   display: block;
 }
 
+.lightbox-trigger {
+  cursor: pointer;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
 #lightbox-overlay {
   position: fixed;
   top: 0;
@@ -741,20 +760,6 @@ table td {
   color: #eee;
   font-size: 0.9rem;
   text-align: center;
-}
-
-.lightbox-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

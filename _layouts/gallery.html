@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
+<div>
+    <h2 class="post-list-heading">{{ page.title }}</h2>
 
-{{content}}
-
-<div id="lightbox-overlay" class="hidden">
-    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-    <div class="lightbox-backdrop"></div>
-    <div class="lightbox-content">
-        <img id="lightbox-image" src="" alt="">
-        <div id="lightbox-meta" class="meta-info"></div>
+    {{content}}
+    
+    <div id="lightbox-overlay" class="hidden">
+        <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-meta" class="meta-info"></div>
+        </div>
     </div>
 </div>
 
