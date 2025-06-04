@@ -21,7 +21,10 @@ layout: default
             {{ post.title | escape }}
           </a>
           <div class="post-cate">
-            <span>{{ post.categories }}</span>
+            <span class="categories">{{ post.categories }}</span>
+            {% for tag in post.tags %}
+                <span class="tag">{{tag}}</span>
+            {% endfor %}
           </div>
         </h3>
         {%- if site.show_excerpts -%}
