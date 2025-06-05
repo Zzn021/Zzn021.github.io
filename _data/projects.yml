@@ -2,17 +2,28 @@ subject: Projects
 listing-order: 2
 icon: "/assets/image/icons/clipboard-list.svg"
 contents:
-  - title: "AI Conversation Simulation ([https://chat.opena1.com/](https://chat.openai.com/))"
+  # - title: "AI Conversation Simulation ([https://chat.opena1.com/](https://chat.openai.com/))"
+  - title: "AI Conversation Simulation"
     role: Research Thesis Project
     description: 
-      - TODO
+      - Researched and benchmarked AI conversation models to elevate user engagement inside a virtual-reality setting.
+      - Built an immersive VR demo that marries ChatGPT with Unity, scripting the experience in C#.
+      - Curated and pre-processed a custom dialogue dataset to fine-tune the model, improving response coherence and user engagement.
 
-  - title: "Data Analytics and Event Intelligence Application ([https://github.com/aw5/aw5-cli](https://github.com/aws/aws-cli))"
+  # - title: "Data Analytics and Event Intelligence Application ([https://github.com/aw5/aw5-cli](https://github.com/aws/aws-cli))"
+  - title: "Data Analytics and Event Intelligence Application"
     role: Delivery Manager
     description: 
-      - TODO
+      - Designed a modular, scalable service architecture that makes new features easy to integrate and deploy across multiple platforms.
+      - Turned business and technical requirements into clear development tasks, uncovering system-level improvements along the way.
+      - Built and managed real-time and batch data pipelines, delivering accurate, up-to-the-minute data for analytics and decision-making.
+      - Introduced Infrastructure-as-Code, automating cloud setup and maintenance to ensure consistent environments and eliminate manual errors.
 
-  - title: "E-Invoicing ([https://pitorch.org/](https://pytorch.org/))" 
+  # - title: "E-Invoicing ([https://pitorch.org/](https://pytorch.org/))" 
+  - title: "E-Invoicing Application" 
     role: Team learder
     description: 
-      - TODO
+      - Designed and built a full-stack invoicing application with Python and React.
+      - Ran the project in Agile sprints with Jira, breaking work into small, trackable deliverables and keeping the team on schedule and on spec.
+      - Served as both Team Lead and Product Owner, steering the product from concept through AWS deployment and coordinating development, testing, and DevOps efforts.
+      - Short-listed for the SENG2021 Macquarie Prize.

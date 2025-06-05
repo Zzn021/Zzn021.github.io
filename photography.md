@@ -1,5 +1,5 @@
 ---
 layout: photo
 title: Photography
-permalink: /photo/
+permalink: /photography/
 ---
