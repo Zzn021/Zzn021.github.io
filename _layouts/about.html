@@ -4,9 +4,55 @@ layout: default
 
 <div>
     {%- if page.title -%}
-        <h1 class="page-heading">{{ page.title }}</h1>
+    <h1 class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
 
     {{ content }}
     
+    {% assign meta = "" | split: "" %}
+    {% for yml_file in site.data %}
+        {% assign meta = meta | push:yml_file[1] %}
+    {% endfor %}
+    {% assign meta = meta | sort: 'listing-order' %}
+
+    <div id="resume">
+        <ul>
+        {% for section in meta %}
+            <li class="section">
+                <h2 class="section-title">
+                {{ section.subject }}
+                </h2>   
+                <ul>
+                {% for part in section.contents %}
+                    <li class="part">
+                        <div class="part-title">
+                        {{ part.title | markdownify }}
+                        {% if part.date %}
+                            <span>
+                            {{ part.date }}
+                            </span>
+                        {% endif %}
+                        </div>
+                        {% for content in part %}
+                            {% if content[0] != "title" and content[0] != "date" %}
+                                {% if content[1].first %}
+                                <ul>
+                                    {% for sub in content[1] %}
+                                    <li class="part-content">
+                                        {{ sub | markdownify }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                    {{ content[1] | markdownify }}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                {% endfor %}
+                </ul>             
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
 </div>

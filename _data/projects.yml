@@ -1,0 +1,18 @@
+subject: Projects
+listing-order: 2
+icon: "/assets/image/icons/clipboard-list.svg"
+contents:
+  - title: "AI Conversation Simulation ([https://chat.opena1.com/](https://chat.openai.com/))"
+    role: Research Thesis Project
+    description: 
+      - TODO
+
+  - title: "Data Analytics and Event Intelligence Application ([https://github.com/aw5/aw5-cli](https://github.com/aws/aws-cli))"
+    role: Delivery Manager
+    description: 
+      - TODO
+
+  - title: "E-Invoicing ([https://pitorch.org/](https://pytorch.org/))" 
+    role: Team learder
+    description: 
+      - TODO
