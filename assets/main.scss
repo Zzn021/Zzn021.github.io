@@ -28,6 +28,101 @@
 
 // Resume
 
+#resume {
+	.intro {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.6s ease-out;
+	}
+
+	.section {
+		list-style: none;
+	}
+
+	.section-title {
+		font-weight: 600;
+		margin-left: -30px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding-bottom: 12px;
+		border-bottom: 1px solid;
+	
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.6s ease-out;
+		div {
+			width: 32px;
+			margin-right: 8px;
+			transform: translateY(6px);
+			display: inline-flex;
+		}
+	}
+	
+	.section-icon {
+		width: 28px;
+		vertical-align: sub;
+		aspect-ratio: 1.0;
+	}
+
+	.part {
+		list-style:disc;
+		list-style-position: outside;
+		margin-left: -30px;
+		padding-bottom: 16px;
+		padding-left: 1.55em;
+		text-indent: -0.6em;
+
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.6s ease-out;
+	}
+
+	.part-title {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+		font-weight: 550;
+	}
+
+	.part-date {
+		font-weight: 600;
+		color: #878686;
+	}
+
+	.part-content {
+		list-style: square;
+		list-style-position: outside;
+		margin-left: 1rem;
+		padding-left: 1rem;
+		text-indent: -0.6em;
+
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.6s ease-out;
+	}
+
+	.part-sub-content{
+		font-style: italic;
+		font-weight: 450;
+		margin-left: 1rem;
+		
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.6s ease-out;
+	}
+
+	img[alt="devicon"] { 
+        height: 60px;
+        width: 60px;
+    }
+
+	.appear {
+		opacity: 1;
+		transform: none;
+	}
+}
 
 // Album
 .album-grid {

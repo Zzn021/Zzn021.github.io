@@ -2,5 +2,5 @@ subject: Languages
 listing-order: 6
 icon: "/assets/image/icons/globe.svg"
 contents:
-  - title: "English: <span style='color: goldenrod; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
-  - title: "Chinese: <span style='color: indianred; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
+  - title: "English: <span style='color: goldenrod; margin: auto 16px; font-family: cursive;'>●●●●●</span>"
+  - title: "Chinese: <span style='color: goldenrod; margin: auto 10px; font-family: cursive;'>●●●●●</span>"
