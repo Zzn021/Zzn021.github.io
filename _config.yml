@@ -24,15 +24,28 @@ email: harry020102@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal website, where you can learn more about me :)
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://zzn021.github.io"
+github_username:  Zzn021
+repository: Zzn021/Zzn021.github.io
+
 linkedin_display_name: Zeneng Zhao
 linkedin_username: zeneng-zhao-5129a3223
-github_username:  Zzn021
+instagram_username: zenengz_0214
+
+social:
+  name: Zeneng Zhao
+  links:
+    - https://github.com/Zzn021
+    - https://www.linkedin.com/in/zeneng-zhao-5129a3223
+    - https://instagram.com/zenengz_0214
+
+google_analytics: G-1NN0L1MT10
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.

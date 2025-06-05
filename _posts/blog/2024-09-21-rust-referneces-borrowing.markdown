@@ -3,7 +3,10 @@ layout: post
 title:  "Rust References & Borrowing"
 date:   2024-09-21 22:50:22 +1100
 categories: blog
-tags: Rust UNSW comp6991
+tags: 
+    - Rust 
+    - UNSW
+    - comp6991
 ---
 
 ### Ownership ###
