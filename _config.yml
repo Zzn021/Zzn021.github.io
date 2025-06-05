@@ -23,7 +23,7 @@ author: Zeneng Zhao
 email: harry020102@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal website, where you can learn more about me :)
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://zzn021.github.io"
 github_username:  Zzn021
 repository: Zzn021/Zzn021.github.io
