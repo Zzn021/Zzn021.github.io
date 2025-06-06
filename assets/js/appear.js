@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const contentBlocks = document.querySelectorAll('.intro, .section-title, .part, .part-content, .part-sub-content');
+    const tags = [
+        '.intro',
+        '.section-title',
+        '.part',
+        '.part-content',
+        '.part-sub-content',
+        '.album-card',
+        '.lightbox-trigger'
+    ]
+    const contentBlocks = document.querySelectorAll(tags.join(', '));
 
     setInterval(() => {
         const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
