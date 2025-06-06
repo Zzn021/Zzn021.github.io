@@ -18,6 +18,6 @@ Contact me at:
     <svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
     </svg>
-    <span class="username">{{ site.author }}</span>
+    <span class="username">{{ site.author | escape }}</span>
 </a>
 or [email](mailto:harry020102@gmail.com)
