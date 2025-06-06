@@ -1,72 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-07T07:09:07+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">Rust References &amp;amp; Borrowing</title><link href="http://localhost:4000/blog/2024/09/21/rust-referneces-borrowing.html" rel="alternate" type="text/html" title="Rust References &amp;amp; Borrowing" /><published>2024-09-21T21:50:22+10:00</published><updated>2024-09-21T21:50:22+10:00</updated><id>http://localhost:4000/blog/2024/09/21/rust-referneces-borrowing</id><content type="html" xml:base="http://localhost:4000/blog/2024/09/21/rust-referneces-borrowing.html"><![CDATA[<h3 id="ownership">Ownership</h3>
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="/assets/image/favicon/favicon.ico" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>E-Invoicing Application | Zzn021.github.io</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="E-Invoicing Application" />
+<meta name="author" content="Zeneng Zhao" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
+<link rel="canonical" href="http://localhost:4000/e-invoicing" />
+<meta property="og:url" content="http://localhost:4000/e-invoicing" />
+<meta property="og:site_name" content="Zzn021.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-13T22:50:22+11:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="E-Invoicing Application" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Zeneng Zhao"},"dateModified":"2023-03-13T22:50:22+11:00","datePublished":"2023-03-13T22:50:22+11:00","description":"Introduction","headline":"E-Invoicing Application","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/e-invoicing"},"url":"http://localhost:4000/e-invoicing"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Zzn021.github.io" /></head>
+<body><header class="site-header" role="banner">
 
-<ul>
-  <li>One owner per value.</li>
-  <li>When the owner goes out of scope, the value is freed.</li>
-  <li>Moving a value hands the keys to a new owner.</li>
-</ul>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zzn021.github.io</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-<p>Borrowing lets multiple parts of your program <em>read</em> (or <em>temporarily edit</em>) a value
-without transferring ownership.</p>
+        <div class="trigger"><a class="page-link" href="/aboutme/">About Me</a><a class="page-link" href="/photography/">Photography</a><a class="page-link" href="/blog">Blogs</a><a class="page-link" href="/projects">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"rust"</span><span class="p">);</span>       <span class="c1">// s owns the heap data</span>
-    <span class="k">let</span> <span class="n">len</span> <span class="o">=</span> <span class="nf">calculate_length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>     <span class="c1">// borrow immutably</span>
-    <span class="nd">println!</span><span class="p">(</span><span class="s">"'{s}' is {len} bytes long"</span><span class="p">);</span>
-<span class="p">}</span>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">E-Invoicing Application</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-03-13T22:50:22+11:00" itemprop="datePublished">Mar 13, 2023
+      </time></p>
+  </header>
 
-<span class="k">fn</span> <span class="nf">calculate_length</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">String</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">usize</span> <span class="p">{</span>
-    <span class="n">text</span><span class="nf">.len</span><span class="p">()</span>                          <span class="c1">// read-only access</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="immutable-references-t">Immutable References (<code class="language-plaintext highlighter-rouge">&amp;T</code>)</h3>
-
-<p>Analogy: Passing a photocopy of a library book. Everyone can read, nobody can scribble.</p>
-
-<ul>
-  <li>we can create any number of <code class="language-plaintext highlighter-rouge">&amp;T</code> references simultaneously.</li>
-  <li>The original owner maintains full control and is still usable.</li>
-</ul>
-
-<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"rust"</span><span class="p">);</span>
-
-    <span class="k">let</span> <span class="n">ref1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
-    <span class="k">let</span> <span class="n">ref2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
-    <span class="nd">println!</span><span class="p">(</span><span class="s">"{ref1} - {ref2}"</span><span class="p">);</span>        <span class="c1">// both fine</span>
-</code></pre></div></div>
-
-<h3 id="mutable-references-mut-t">Mutable References (<code class="language-plaintext highlighter-rouge">&amp;mut T</code>)</h3>
-
-<p>with <code class="language-plaintext highlighter-rouge">mut</code> we can modify the borrowed variable.</p>
-
-<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"mutable"</span><span class="p">);</span>
-
-    <span class="nf">change</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">);</span>
-    <span class="nd">println!</span><span class="p">(</span><span class="s">"{s}"</span><span class="p">);</span>                    <span class="c1">// prints "mutable string"</span>
-
-    <span class="k">fn</span> <span class="nf">change</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">task</span><span class="nf">.push_str</span><span class="p">(</span><span class="s">" string"</span><span class="p">);</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p>If we have a mutable reference to a value, we can have no other references to that value.</p>
-
-<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
-
-    <span class="k">let</span> <span class="n">r1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">;</span>
-    <span class="k">let</span> <span class="n">r2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">;</span>
-
-    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}, {}"</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">);</span>         <span class="c1">// This fails</span>
-</code></pre></div></div>
-
-<h3 id="the-rules-of-references">The Rules of References</h3>
-<ul>
-  <li>At any given time, you can have either one mutable reference or any number of immutable references.</li>
-  <li>References must always be valid.</li>
-</ul>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><category term="Rust" /><category term="UNSW" /><category term="comp6991" /><summary type="html"><![CDATA[Ownership]]></summary></entry><entry><title type="html">Welcome to My Github.io Page!</title><link href="http://localhost:4000/greeting" rel="alternate" type="text/html" title="Welcome to My Github.io Page!" /><published>2024-01-04T22:50:22+11:00</published><updated>2024-01-04T22:50:22+11:00</updated><id>http://localhost:4000/welcome-to-my-githubio-page</id><content type="html" xml:base="http://localhost:4000/greeting"><![CDATA[<p>Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.</p>
-
-<p>If you’re into photography, feel free to check out my work on <a href="https://www.instagram.com/zenengz_0214/">Instagram</a>. You can also reach out to me anytime via <a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">Linkedin</a> or <a href="mailto:harry020102@gmail.com">email</a> — I’d love to connect!</p>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><summary type="html"><![CDATA[Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.]]></summary></entry><entry><title type="html">E-Invoicing Application</title><link href="http://localhost:4000/e-invoicing" rel="alternate" type="text/html" title="E-Invoicing Application" /><published>2023-03-13T22:50:22+11:00</published><updated>2023-03-13T22:50:22+11:00</updated><id>http://localhost:4000/e-invoice</id><content type="html" xml:base="http://localhost:4000/e-invoicing"><![CDATA[<h3 id="introduction">Introduction</h3>
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="introduction">Introduction</h3>
 
 <p>This was my first UNSW software engineering work shop project, a scrappy, SaaS-ready e-invoicing app, includes features such as invoice creation, validation, rendering and sending.The project is a SaaS e-invoicing implementation deployed on AWS. It uses UBL-XML messaging over the PEPPOL network and follows an open, vendor-neutral architecture aimed at meeting SME requirements in a standards-compliant way.</p>
 
@@ -209,11 +192,63 @@ We modelled the application with UML sequence diagrams that trace the complete u
       <td>React single-page app</td>
     </tr>
   </tbody>
-</table>]]></content><author><name>Zeneng Zhao</name></author><category term="project" /><category term="AWS" /><category term="SaaS" /><category term="Python" /><category term="React" /><category term="GPT" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Wild Life</title><link href="http://localhost:4000/photography/wild-life" rel="alternate" type="text/html" title="Wild Life" /><published>2000-01-01T00:00:00+11:00</published><updated>2000-01-01T00:00:00+11:00</updated><id>http://localhost:4000/photography/wild-life</id><content type="html" xml:base="http://localhost:4000/photography/wild-life"><![CDATA[<div class="gallery">
-    <img src="/assets/image/photos/wild-life/DSCF6873-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
-    <img src="/assets/image/photos/wild-life/D03CDA30-9261-4988-8AEB-751621294F73-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
-    <img src="/assets/image/photos/wild-life/DSCF7044-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
-</div>]]></content><author><name>Zeneng Zhao</name></author><category term="photography" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Wings of Steel</title><link href="http://localhost:4000/photography/wings-of-steel" rel="alternate" type="text/html" title="Wings of Steel" /><published>2000-01-01T00:00:00+11:00</published><updated>2000-01-01T00:00:00+11:00</updated><id>http://localhost:4000/photography/wings-of-steel</id><content type="html" xml:base="http://localhost:4000/photography/wings-of-steel"><![CDATA[<div class="gallery">
-    <img src="/assets/image/photos/aircraft/DSCF6138.jpg" class="lightbox-trigger" alt="" />
-    <img src="/assets/image/photos/aircraft/DSCF6176.jpg" class="lightbox-trigger" alt="" />
-</div>]]></content><author><name>Zeneng Zhao</name></author><category term="photography" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</table>
+
+
+  </div><a class="u-url" href="/e-invoicing" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Zzn021.github.io</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Zeneng Zhao</li><li><a class="u-email" href="mailto:harry020102@gmail.com">harry020102@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <!-- Not using --><!--  -->
+  	
+	<!-- github --><li>
+			<a href="https://github.com/Zzn021">
+				<svg class="svg-icon">
+					<use xlink:href="/assets/minima-social-icons.svg#github"></use>
+				</svg>
+				<span class="username">Zzn021</span>
+			</a>
+		</li><!-- Instagram -->
+  	<!--<li>
+			<a href="https://instagram.com/zenengz_0214">
+				<svg class="svg-icon">
+					<use xlink:href="/assets/minima-social-icons.svg#instagram"></use>
+				</svg>
+				<span class="username">zenengz_0214</span>
+			</a>
+		</li>-->
+	<!-- Linkedin --><li>
+			<a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">
+				<svg class="svg-icon">
+					<use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+				</svg>
+				<span class="username">Zeneng Zhao</span>
+			</a>
+		</li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my personal website, where you can learn more about me :)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
