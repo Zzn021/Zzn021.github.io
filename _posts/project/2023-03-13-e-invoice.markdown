@@ -14,9 +14,10 @@ tags:
 
 ### Introduction
 
-This was my first UNSW software engineering work shop project, a scrappy, SaaS-ready e-invoicing app, includes features such as invoice creation, validation, rendering and sending.The project is a SaaS e-invoicing implementation deployed on AWS. It uses UBL-XML messaging over the PEPPOL network and follows an open, vendor-neutral architecture aimed at meeting SME requirements in a standards-compliant way.
+This was my first UNSW software engineering work shop project, a SaaS e-invoicing app, includes features such as invoice creation, validation, rendering and sending.The project is deployed on AWS, it uses UBL-XML messaging over the PEPPOL network and aimed at meeting SME requirements in a standards-compliant way.
 
-Australia is shifting from paper and emailed PDFs to structured, machine-readable invoices that move directly between accounting systems. NSW accelerated the change by mandating that all state agencies accept e-invoices for goods and services up to AUD 1 million from 2022. The switch, part of the broader Industry 4.0 push, delivers faster payments, fewer errors, and tighter fraud controls.
+E-Invoicing ?
+: Australia is shifting from paper and emailed PDFs to structured, machine-readable invoices that move directly between accounting systems. NSW accelerated the change by mandating that all state agencies accept e-invoices for goods and services up to AUD 1 million from 2022. The switch, part of the broader Industry 4.0 push, delivers faster payments, fewer errors, and tighter fraud controls.
 
 ### Team
 
