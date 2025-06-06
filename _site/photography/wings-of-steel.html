@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8">
-  <link rel="icon" type="image/x-icon" href="/assets/image/favicon/favicon.ico" >
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Wings of Steel | Zzn021.github.io</title>
@@ -58,54 +58,7 @@
     </div>
 </div>
 
-<script>
-    function formatExposureTime(seconds) {
-        if (seconds >= 1) {
-            return `${seconds.toFixed(1)}s`;
-        } else {
-            const denominator = Math.round(1 / seconds);
-            return `1/${denominator} sec`;
-        }
-    }
-
-    const overlay = document.getElementById("lightbox-overlay");
-    const overlayImage = document.getElementById("lightbox-image");
-    const overlayMeta = document.getElementById("lightbox-meta");
-
-    document.querySelectorAll(".lightbox-trigger").forEach(img => {
-        img.addEventListener("click", () => {
-            overlayImage.src = img.src;
-            overlay.classList.remove("hidden");
-
-            // Fetch EXIF data
-            overlayMeta.innerHTML = "Loading EXIF...";
-            fetch(img.src)
-            .then(response => response.blob())
-            .then(blob => {
-                EXIF.getData(blob, function () {
-                    const make = EXIF.getTag(this, "Make") || "Unknown";
-                    const model = EXIF.getTag(this, "Model") || "";
-                    const iso = EXIF.getTag(this, "ISOSpeedRatings") || "—";
-                    const fstop = EXIF.getTag(this, "FNumber") || "—";
-                    const exposure = EXIF.getTag(this, "ExposureTime") || "—";
-                    const formattedExposure = exposure ? formatExposureTime(exposure) : "—";
-                    overlayMeta.innerHTML = `
-                    <strong>${make} ${model}</strong><br>
-                    ISO: ${iso} | f/${fstop} | ${formattedExposure}<br>
-                    Zeneng Zhao
-                    `;
-                });
-            });
-        });
-    });
-
-    // Clicking the backdrop closes the overlay
-    document.querySelector(".lightbox-backdrop").addEventListener("click", () => {
-        overlay.classList.add("hidden");
-        overlayImage.src = "";
-        overlayMeta.innerHTML = "";
-    });
-</script>
+<script src="/assets/js/lightbox.js"></script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
