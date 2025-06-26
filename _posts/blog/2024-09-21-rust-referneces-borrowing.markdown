@@ -7,6 +7,7 @@ tags:
     - Rust 
     - UNSW
     - comp6991
+permalink: blog/reference-brrowing
 ---
 
 ### Ownership ###

@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-07T07:42:59+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">Rust References &amp;amp; Borrowing</title><link href="http://localhost:4000/blog/2024/09/21/rust-referneces-borrowing.html" rel="alternate" type="text/html" title="Rust References &amp;amp; Borrowing" /><published>2024-09-21T21:50:22+10:00</published><updated>2024-09-21T21:50:22+10:00</updated><id>http://localhost:4000/blog/2024/09/21/rust-referneces-borrowing</id><content type="html" xml:base="http://localhost:4000/blog/2024/09/21/rust-referneces-borrowing.html"><![CDATA[<h3 id="ownership">Ownership</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-26T20:10:33+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>A simple implementation of a multi-attribute linear-hashed file structure database</p>
+
+<p><a href="https://github.com/Zzn021/miniDB">Github Repo</a></p>
+
+<h1 id="structure">Structure</h1>
+
+<p>A MALH relation R is represented by 3 physical files:</p>
+
+<ul>
+  <li><strong>R.info</strong>
+  Containing global information
+    <ul>
+      <li>a count of the number of attributes</li>
+      <li>the depth of main data file (d for linear hashing)</li>
+      <li>the page index of the split pointer (sp for linear hashing)</li>
+      <li>a count of the number of main data page</li>
+      <li>the total number of tuples (in both data and overflow page)</li>
+      <li>the choice vector (cv for multi-attribute hashing)</li>
+    </ul>
+  </li>
+  <li><strong>R.data</strong>
+  Containing data pages
+    <ul>
+      <li>offset of start of free space</li>
+      <li>overflow page index (or NO_PAGE if none)</li>
+      <li>a count of the number of tuples in that page</li>
+      <li>the tuples (as comma-separated C strings)</li>
+    </ul>
+  </li>
+  <li><strong>R.ovflow</strong>
+  Containing overflow pages, which have the same structure as data pages</li>
+</ul>
+
+<p>When a MALH relation is first created, it is set to contain a \(2^n\) pages, with depth \(d=n\) and split pointers \(sp=0\). The overflow is initially empty.</p>
+
+<p><img src="/assets/image/projects/minidb/initial.png" alt="alt text" /></p>
+
+<p>After 294 tuples have been inserted, the file becomes (depending on field value distributions, tuple sizes, etc):</p>
+
+<p><img src="/assets/image/projects/minidb/second.png" alt="alt text" /></p>
+
+<p>Example of a page split:</p>
+
+<p><img src="/assets/image/projects/minidb/page_split.png" alt="alt text" /></p>
+
+<p>Pages in MALH files have the following structure: a header with three unsigned integers, strings for all of the tuple data, free space containing no tuple data.</p>
+
+<p><img src="/assets/image/projects/minidb/malh_structure.png" alt="alt text" /></p>
+
+<h1 id="commands">Commands</h1>
+
+<h4 id="create">Create</h4>
+
+<p>Creates MALH (multi-attribute linear-hashed) files by accepting 4 command line arguments:</p>
+<ul>
+  <li>the name of the relation</li>
+  <li>the number of attributes</li>
+  <li>the initial number of data pages (rounded up to nearest 2n)</li>
+  <li>the multi-attribute hashing choice vector</li>
+</ul>
+
+<p>Example:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./create R 4 6 <span class="s2">"0,0:0,1:1,0:1,1:2,0:3,0"</span>
+</code></pre></div></div>
+<p>makes a table called abc with 4 attributes and 8 inital data pages (6 will be rounded up to the nearest 2n)</p>
+
+<p>The choice vector (4th argument):</p>
+<ul>
+  <li>bit 0 from attribute 0 produces bit 0 of the MA hash value</li>
+  <li>bit 1 from attribute 0 produces bit 1 of the MA hash value</li>
+  <li>bit 0 from attribute 1 produces bit 2 of the MA hash value</li>
+  <li>bit 1 from attribute 1 produces bit 3 of the MA hash value</li>
+  <li>bit 0 from attribute 2 produces bit 4 of the MA hash value</li>
+  <li>bit 0 from attribute 3 produces bit 5 of the MA hash value</li>
+</ul>
+
+<h4 id="insert">Insert</h4>
+
+<p>Reads tuples, one per line, from std input and inserts them into the relation.</p>
+
+<p>The bucket where the tuple is stored is determined by the appropriate number of bits of the combined hash value. If the relation has \(2^d\) data pages, then \(d\) bits are used. If the specified data page is full, then the tuple is inserted into an overflow page of that data page.</p>
+
+<p>Example:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"100,xyz,abc"</span> | ./insert R
+<span class="c"># prints the hash value for the tuple</span>
+</code></pre></div></div>
+
+<h4 id="query">Query</h4>
+
+<p>Run selection and projection queries over a given relation. It supports wildcard and pattern matching, finds all tuples in either the data pages or overflow pages that match the query, as well as flexible attribute projection without <strong>distinct</strong></p>
+
+<p>Example:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./query <span class="o">[</span><span class="nt">-v</span><span class="o">]</span> <span class="s1">'a1,a2,...'</span> from RelName where <span class="s1">'v1,v2,...'</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>‘a1,a2,…’ (or ‘*’)</strong>: a sequence of 1-based attribute indexes used for projection, can be ‘*’ to indicate all attributes. The minimal ‘a’ value is ‘0’</li>
+  <li><strong>‘v1,v2,…‘</strong>: a sequence of attribute values used for selection</li>
+</ul>
+
+<p>Each $v_i$ in the selection tuple can be:</p>
+<ul>
+  <li><strong>Literal value</strong>: A specific value that must match exactly in the corresponding attribute position. (e.g., ‘xyz’ matches ‘xyz’, ‘64’ matches ‘64’)</li>
+  <li><strong>Single question mark ‘?’</strong>: Matches any literal value in the corresponding attribute position. (e.g., ‘?’ matches ‘xyz’, ‘?’ matches ‘64’)</li>
+  <li><strong>Pattern string containing ‘%’</strong>: A string that includes one or more’%’, where each ‘%’ matches zero or more characters.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./query <span class="s1">'*'</span> from R where <span class="s1">'?,?,?'</span>
+<span class="c"># matches any tuple in R</span>
+
+<span class="nv">$ </span>./query <span class="s1">'3, 1'</span> from R where <span class="s1">'10,?,?'</span>
+<span class="c"># projects attribute 1 and 3 in order from tuples where attribute 0 is 10</span>
+
+<span class="nv">$ </span>./query <span class="s1">'*'</span> from R where <span class="s1">'?,%xz%,?'</span>
+<span class="c"># matches any tuple where attribute 1 contains 'xz'</span>
+</code></pre></div></div>
+
+<h4 id="status">Status</h4>
+
+<p>Check the status of the files for table R with stats command:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./stats R
+<span class="c"># prints out the stats of R</span>
+</code></pre></div></div>
+
+<h4 id="dump">dump</h4>
+
+<p>Show tuples, bucket-by-bucket</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./dump <span class="o">[</span>RelName]
+</code></pre></div></div>
+<h4 id="gendata">gendata</h4>
+
+<p>Use <code class="language-plaintext highlighter-rouge">gendata</code> to generate large numbers of tuples, and insert them as:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./gendata 800 3 100 | ./insert R
+</code></pre></div></div>
+
+<p>Insert 800 tuples into the table, with ID values starting at 100.</p>
+
+<h4 id="clean">clean</h4>
+
+<p>Remove <code class="language-plaintext highlighter-rouge">Rel.data</code> <code class="language-plaintext highlighter-rouge">Rel.info</code> <code class="language-plaintext highlighter-rouge">Rel.ovflow</code>. If no argument provided, remove every existing relation.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./clean <span class="o">[</span>RelName]
+</code></pre></div></div>
+
+<script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>]]></content><author><name>Zeneng Zhao</name></author><category term="project" /><category term="Database" /><category term="hashing" /><category term="SQL" /><category term="C" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Rust References &amp;amp; Borrowing</title><link href="http://localhost:4000/blog/reference-brrowing" rel="alternate" type="text/html" title="Rust References &amp;amp; Borrowing" /><published>2024-09-21T21:50:22+10:00</published><updated>2024-09-21T21:50:22+10:00</updated><id>http://localhost:4000/blog/rust-referneces-borrowing</id><content type="html" xml:base="http://localhost:4000/blog/reference-brrowing"><![CDATA[<h3 id="ownership">Ownership</h3>
 
 <ul>
   <li>One owner per value.</li>
@@ -66,7 +215,7 @@ without transferring ownership.</p>
   <li>References must always be valid.</li>
 </ul>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><category term="Rust" /><category term="UNSW" /><category term="comp6991" /><summary type="html"><![CDATA[Ownership]]></summary></entry><entry><title type="html">Welcome to My Github.io Page!</title><link href="http://localhost:4000/greeting" rel="alternate" type="text/html" title="Welcome to My Github.io Page!" /><published>2024-01-04T22:50:22+11:00</published><updated>2024-01-04T22:50:22+11:00</updated><id>http://localhost:4000/welcome-to-my-githubio-page</id><content type="html" xml:base="http://localhost:4000/greeting"><![CDATA[<p>Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.</p>
 
-<p>If you’re into photography, feel free to check out my work on <a href="https://www.instagram.com/zenengz_0214/">Instagram</a>. You can also reach out to me anytime via <a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">Linkedin</a> or <a href="mailto:harry020102@gmail.com">email</a> — I’d love to connect!</p>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><summary type="html"><![CDATA[Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.]]></summary></entry><entry><title type="html">E-Invoicing Application</title><link href="http://localhost:4000/e-invoicing" rel="alternate" type="text/html" title="E-Invoicing Application" /><published>2023-03-13T22:50:22+11:00</published><updated>2023-03-13T22:50:22+11:00</updated><id>http://localhost:4000/e-invoice</id><content type="html" xml:base="http://localhost:4000/e-invoicing"><![CDATA[<h3 id="introduction">Introduction</h3>
+<p>If you’re into photography, feel free to check out my work on <a href="https://www.instagram.com/zenengz_0214/">Instagram</a>. You can also reach out to me anytime via <a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">Linkedin</a> or <a href="mailto:harry020102@gmail.com">email</a> — I’d love to connect!</p>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><summary type="html"><![CDATA[Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.]]></summary></entry><entry><title type="html">E-Invoicing Application</title><link href="http://localhost:4000/project/e-invoicing" rel="alternate" type="text/html" title="E-Invoicing Application" /><published>2023-03-13T22:50:22+11:00</published><updated>2023-03-13T22:50:22+11:00</updated><id>http://localhost:4000/project/e-invoice</id><content type="html" xml:base="http://localhost:4000/project/e-invoicing"><![CDATA[<h3 id="introduction">Introduction</h3>
 
 <p>This was my first UNSW software engineering work shop project, a SaaS e-invoicing app, includes features such as invoice creation, validation, rendering and sending.The project is deployed on AWS, it uses UBL-XML messaging over the PEPPOL network and aimed at meeting SME requirements in a standards-compliant way.</p>
 

@@ -3,7 +3,7 @@ layout: post
 title:  "E-Invoicing Application"
 date:   2023-03-13 22:50:22 +1100
 categories: project
-permalink: e-invoicing
+permalink: project/e-invoicing
 tags: 
     - AWS
     - SaaS
