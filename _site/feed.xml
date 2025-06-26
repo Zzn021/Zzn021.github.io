@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-26T20:10:33+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-27T07:44:02+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
 
 <p>A simple implementation of a multi-attribute linear-hashed file structure database</p>
 
@@ -35,15 +35,15 @@
 
 <p>When a MALH relation is first created, it is set to contain a \(2^n\) pages, with depth \(d=n\) and split pointers \(sp=0\). The overflow is initially empty.</p>
 
-<p><img src="/assets/image/projects/minidb/initial.png" alt="alt text" /></p>
+<p><img src="/assets/image/projects/minidb/initial_db.png" alt="alt text" /></p>
 
 <p>After 294 tuples have been inserted, the file becomes (depending on field value distributions, tuple sizes, etc):</p>
 
-<p><img src="/assets/image/projects/minidb/second.png" alt="alt text" /></p>
+<p><img src="/assets/image/projects/minidb/second_db.png" alt="alt text" /></p>
 
 <p>Example of a page split:</p>
 
-<p><img src="/assets/image/projects/minidb/page_split.png" alt="alt text" /></p>
+<p><img src="/assets/image/projects/minidb/after_split.png" alt="alt text" /></p>
 
 <p>Pages in MALH files have the following structure: a header with three unsigned integers, strings for all of the tuple data, free space containing no tuple data.</p>
 
