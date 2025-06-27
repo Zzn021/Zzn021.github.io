@@ -3,7 +3,7 @@ layout: post
 title:  "messenger"
 date:   2023-04-28 22:50:22 +1100
 categories: project
-permalink: project/minidb
+permalink: project/messenger
 tags: 
     - TCP
     - UDP
@@ -14,6 +14,8 @@ tags:
 ### Introduction
 
 The application is implemented in Java (OpenJDK 11.0.21) using a client-server architecture. It consists of one central server and multiple clients. Text messages are transmitted over TCP, while video content is sent directly between clients using UDP.
+
+[Github Repo][repo]
 
 ### Design
 
@@ -101,3 +103,6 @@ Please enter your command:
 ### UML Diagram
 
 ![alt text](/assets/image/projects/messenger/uml.png)
+
+
+[repo]:https://github.com/Zzn021/miniDB

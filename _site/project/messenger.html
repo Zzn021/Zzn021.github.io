@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="/assets/image/favicon/favicon.ico" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>messenger | Zzn021.github.io</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="messenger" />
+<meta name="author" content="Zeneng Zhao" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
+<link rel="canonical" href="http://localhost:4000/project/messenger" />
+<meta property="og:url" content="http://localhost:4000/project/messenger" />
+<meta property="og:site_name" content="Zzn021.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-28T21:50:22+10:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="messenger" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Zeneng Zhao"},"dateModified":"2023-04-28T21:50:22+10:00","datePublished":"2023-04-28T21:50:22+10:00","description":"Introduction","headline":"messenger","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/project/messenger"},"url":"http://localhost:4000/project/messenger"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Zzn021.github.io" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zzn021.github.io</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/aboutme/">About Me</a><a class="page-link" href="/photography/">Photography</a><a class="page-link" href="/blog">Blogs</a><a class="page-link" href="/project">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">messenger</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-04-28T21:50:22+10:00" itemprop="datePublished">Apr 28, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="introduction">Introduction</h3>
+
+<p>The application is implemented in Java (OpenJDK 11.0.21) using a client-server architecture. It consists of one central server and multiple clients. Text messages are transmitted over TCP, while video content is sent directly between clients using UDP.</p>
+
+<p><a href="https://github.com/Zzn021/miniDB">Github Repo</a></p>
+
+<h3 id="design">Design</h3>
+
+<p>Files:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Audience.java</code>
+    <ul>
+      <li>Encapsulate the UDP port and user addresss</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Authenticator.java</code>
+    <ul>
+      <li>Helps to authenticate the user by reading credentials.txt</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Client.java</code>
+    <ul>
+      <li>Client application, communicate with the server</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Command.java</code>
+    <ul>
+      <li>Helps to process the user’s command (e.g.: /activeuser, /msgto, /logout … etc)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Group.java</code>
+    <ul>
+      <li>A group object helps to manage the group mechanism of the application</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">GroupLog.java</code>
+    <ul>
+      <li>Helps to manage all the groups created in the application</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">GroupMessageLog.java</code>
+    <ul>
+      <li>Extends the MessageLog.java class, helps with the messages in a group</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Message.java</code>
+    <ul>
+      <li>Helps with processing messages, contains the sender’s name (on group chat) or receive name (on private message), also a timestamp</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">MessageLog.java</code>
+    <ul>
+      <li>Help with logging messages sent in server in file.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Messenger.java</code>
+    <ul>
+      <li>Help with sending and receiving messages between server and client. Encapsulate the <code class="language-plaintext highlighter-rouge">DataInputStream</code> and <code class="language-plaintext highlighter-rouge">DataOutputStream</code> and provides more features</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Server.java</code>
+    <ul>
+      <li>Server application, communicate with multiple clients.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">UserLog.java</code>
+    <ul>
+      <li>Help with managing all users’ activities and log them in <code class="language-plaintext highlighter-rouge">userlog.txt</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">UserRecord.java</code>
+    <ul>
+      <li>Help with managing the user’s basic information</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The application requires a <code class="language-plaintext highlighter-rouge">credential.txt</code> file to store all the user and their password. The application on run will generate extra files, such as group message log file. The application will automatically update content of the log files (<code class="language-plaintext highlighter-rouge">userlog.txt</code>, <code class="language-plaintext highlighter-rouge">messagelog.txt</code>, and group message log file)</p>
+
+<h3 id="application-layer-message-format">Application Layer Message Format</h3>
+
+<p>Messages are conveyed as Command objects; during communication, the client sends plain text, and the server reads and parses it into a Command object.</p>
+
+<p>The Command object comprises an action and arguments. The action represents one of the provided commands. The server takes an action and then executes the corresponding 
+command by interpreting the subsequent arguments.</p>
+
+<p>In more detail, when the client sends a message to execute a command, the message is split into words using the space character as the delimiter. The first word denotes the action, and the subsequent words are the arguments. If the action is not one of the provided commands, the server promptly informs the client that the command is invalid.</p>
+
+<h3 id="system-functionality">System Functionality</h3>
+
+<p><strong>Sever</strong>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>java Server 8000 3
+</code></pre></div></div>
+
+<p>On running, server listen to every new connect and create a thread for it.</p>
+
+<p><strong>Client</strong>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>java Client localhost 8000 64
+</code></pre></div></div>
+
+<p>On running, client establish a TCP connect to the server with the given address. Client creates two threads:</p>
+<ul>
+  <li>One thread to display all incoming response from the server.</li>
+  <li>One thread waiting for any incoming UDP files.</li>
+</ul>
+
+<p><strong>P2P</strong>:
+The client-side implementation of the p2pvideo command assumes that the client has previously executed the /activeuser command. When invoked, the client uses its UDP socket to transmit the source file in packet-sized chunks. The first packet includes metadata such as the sender’s identity and the filename, while the final packet is an empty packet indicating the end of the transfer. Notably, the server is unaware of the p2pvideo command and remains uninvolved throughout the entire process.</p>
+
+<p>Sender:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your command:
+/p2pvideo joe example.mp4
+127.0.0.1
+example.mp4  has been uploaded
+/msgto /activeuser /creategroup /joingroup / groupmsg /logout /p2pvideo
+Please enter your command:
+</code></pre></div></div>
+
+<p>Receiver:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/msgto /activeuser /creategroup /joingroup / groupmsg /logout /p2pvideo
+Please enter your command:
+Received file 'example.mp4' from: xi
+/msgto /activeuser /creategroup /joingroup / groupmsg /logout /p2pvideo
+Please enter your command:
+</code></pre></div></div>
+
+<h3 id="uml-diagram">UML Diagram</h3>
+
+<p><img src="/assets/image/projects/messenger/uml.png" alt="alt text" /></p>
+
+
+  </div><a class="u-url" href="/project/messenger" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Zzn021.github.io</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Zeneng Zhao</li><li><a class="u-email" href="mailto:harry020102@gmail.com">harry020102@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <!-- Not using --><!--  -->
+  	
+	<!-- github --><li>
+			<a href="https://github.com/Zzn021">
+				<svg class="svg-icon">
+					<use xlink:href="/assets/minima-social-icons.svg#github"></use>
+				</svg>
+				<span class="username">Zzn021</span>
+			</a>
+		</li><!-- Instagram -->
+  	<!--<li>
+			<a href="https://instagram.com/zenengz_0214">
+				<svg class="svg-icon">
+					<use xlink:href="/assets/minima-social-icons.svg#instagram"></use>
+				</svg>
+				<span class="username">zenengz_0214</span>
+			</a>
+		</li>-->
+	<!-- Linkedin --><li>
+			<a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">
+				<svg class="svg-icon">
+					<use xlink:href="/assets/minima-social-icons.svg#linkedin"></use>
+				</svg>
+				<span class="username">Zeneng Zhao</span>
+			</a>
+		</li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my personal website, where you can learn more about me :)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

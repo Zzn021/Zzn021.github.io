@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-27T07:44:02+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-27T12:37:54+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
 
 <p>A simple implementation of a multi-attribute linear-hashed file structure database</p>
 
@@ -213,9 +213,138 @@ without transferring ownership.</p>
 <ul>
   <li>At any given time, you can have either one mutable reference or any number of immutable references.</li>
   <li>References must always be valid.</li>
-</ul>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><category term="Rust" /><category term="UNSW" /><category term="comp6991" /><summary type="html"><![CDATA[Ownership]]></summary></entry><entry><title type="html">Welcome to My Github.io Page!</title><link href="http://localhost:4000/greeting" rel="alternate" type="text/html" title="Welcome to My Github.io Page!" /><published>2024-01-04T22:50:22+11:00</published><updated>2024-01-04T22:50:22+11:00</updated><id>http://localhost:4000/welcome-to-my-githubio-page</id><content type="html" xml:base="http://localhost:4000/greeting"><![CDATA[<p>Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.</p>
+</ul>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><category term="Rust" /><category term="UNSW" /><category term="comp6991" /><summary type="html"><![CDATA[Ownership]]></summary></entry><entry><title type="html">Welcome to My Github.io Page!</title><link href="http://localhost:4000/greeting" rel="alternate" type="text/html" title="Welcome to My Github.io Page!" /><published>2024-01-04T21:50:22+10:00</published><updated>2024-01-04T21:50:22+10:00</updated><id>http://localhost:4000/welcome-to-my-githubio-page</id><content type="html" xml:base="http://localhost:4000/greeting"><![CDATA[<p>Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.</p>
 
-<p>If you’re into photography, feel free to check out my work on <a href="https://www.instagram.com/zenengz_0214/">Instagram</a>. You can also reach out to me anytime via <a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">Linkedin</a> or <a href="mailto:harry020102@gmail.com">email</a> — I’d love to connect!</p>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><summary type="html"><![CDATA[Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.]]></summary></entry><entry><title type="html">E-Invoicing Application</title><link href="http://localhost:4000/project/e-invoicing" rel="alternate" type="text/html" title="E-Invoicing Application" /><published>2023-03-13T22:50:22+11:00</published><updated>2023-03-13T22:50:22+11:00</updated><id>http://localhost:4000/project/e-invoice</id><content type="html" xml:base="http://localhost:4000/project/e-invoicing"><![CDATA[<h3 id="introduction">Introduction</h3>
+<p>If you’re into photography, feel free to check out my work on <a href="https://www.instagram.com/zenengz_0214/">Instagram</a>. You can also reach out to me anytime via <a href="https://www.linkedin.com/in/zeneng-zhao-5129a3223">Linkedin</a> or <a href="mailto:harry020102@gmail.com">email</a> — I’d love to connect!</p>]]></content><author><name>Zeneng Zhao</name></author><category term="blog" /><summary type="html"><![CDATA[Hi! I’m Zeneng, also known as Harry. I’m a software engineer and a graduate of UNSW. Welcome to my GitHub Pages site! Here, you’ll find posts on software engineering, uni life, and other topics I find interesting.]]></summary></entry><entry><title type="html">messenger</title><link href="http://localhost:4000/project/messenger" rel="alternate" type="text/html" title="messenger" /><published>2023-04-28T21:50:22+10:00</published><updated>2023-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/messenger</id><content type="html" xml:base="http://localhost:4000/project/messenger"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>The application is implemented in Java (OpenJDK 11.0.21) using a client-server architecture. It consists of one central server and multiple clients. Text messages are transmitted over TCP, while video content is sent directly between clients using UDP.</p>
+
+<p><a href="https://github.com/Zzn021/miniDB">Github Repo</a></p>
+
+<h3 id="design">Design</h3>
+
+<p>Files:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Audience.java</code>
+    <ul>
+      <li>Encapsulate the UDP port and user addresss</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Authenticator.java</code>
+    <ul>
+      <li>Helps to authenticate the user by reading credentials.txt</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Client.java</code>
+    <ul>
+      <li>Client application, communicate with the server</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Command.java</code>
+    <ul>
+      <li>Helps to process the user’s command (e.g.: /activeuser, /msgto, /logout … etc)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Group.java</code>
+    <ul>
+      <li>A group object helps to manage the group mechanism of the application</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">GroupLog.java</code>
+    <ul>
+      <li>Helps to manage all the groups created in the application</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">GroupMessageLog.java</code>
+    <ul>
+      <li>Extends the MessageLog.java class, helps with the messages in a group</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Message.java</code>
+    <ul>
+      <li>Helps with processing messages, contains the sender’s name (on group chat) or receive name (on private message), also a timestamp</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">MessageLog.java</code>
+    <ul>
+      <li>Help with logging messages sent in server in file.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Messenger.java</code>
+    <ul>
+      <li>Help with sending and receiving messages between server and client. Encapsulate the <code class="language-plaintext highlighter-rouge">DataInputStream</code> and <code class="language-plaintext highlighter-rouge">DataOutputStream</code> and provides more features</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Server.java</code>
+    <ul>
+      <li>Server application, communicate with multiple clients.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">UserLog.java</code>
+    <ul>
+      <li>Help with managing all users’ activities and log them in <code class="language-plaintext highlighter-rouge">userlog.txt</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">UserRecord.java</code>
+    <ul>
+      <li>Help with managing the user’s basic information</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The application requires a <code class="language-plaintext highlighter-rouge">credential.txt</code> file to store all the user and their password. The application on run will generate extra files, such as group message log file. The application will automatically update content of the log files (<code class="language-plaintext highlighter-rouge">userlog.txt</code>, <code class="language-plaintext highlighter-rouge">messagelog.txt</code>, and group message log file)</p>
+
+<h3 id="application-layer-message-format">Application Layer Message Format</h3>
+
+<p>Messages are conveyed as Command objects; during communication, the client sends plain text, and the server reads and parses it into a Command object.</p>
+
+<p>The Command object comprises an action and arguments. The action represents one of the provided commands. The server takes an action and then executes the corresponding 
+command by interpreting the subsequent arguments.</p>
+
+<p>In more detail, when the client sends a message to execute a command, the message is split into words using the space character as the delimiter. The first word denotes the action, and the subsequent words are the arguments. If the action is not one of the provided commands, the server promptly informs the client that the command is invalid.</p>
+
+<h3 id="system-functionality">System Functionality</h3>
+
+<p><strong>Sever</strong>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>java Server 8000 3
+</code></pre></div></div>
+
+<p>On running, server listen to every new connect and create a thread for it.</p>
+
+<p><strong>Client</strong>:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>java Client localhost 8000 64
+</code></pre></div></div>
+
+<p>On running, client establish a TCP connect to the server with the given address. Client creates two threads:</p>
+<ul>
+  <li>One thread to display all incoming response from the server.</li>
+  <li>One thread waiting for any incoming UDP files.</li>
+</ul>
+
+<p><strong>P2P</strong>:
+The client-side implementation of the p2pvideo command assumes that the client has previously executed the /activeuser command. When invoked, the client uses its UDP socket to transmit the source file in packet-sized chunks. The first packet includes metadata such as the sender’s identity and the filename, while the final packet is an empty packet indicating the end of the transfer. Notably, the server is unaware of the p2pvideo command and remains uninvolved throughout the entire process.</p>
+
+<p>Sender:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter your command:
+/p2pvideo joe example.mp4
+127.0.0.1
+example.mp4  has been uploaded
+/msgto /activeuser /creategroup /joingroup / groupmsg /logout /p2pvideo
+Please enter your command:
+</code></pre></div></div>
+
+<p>Receiver:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/msgto /activeuser /creategroup /joingroup / groupmsg /logout /p2pvideo
+Please enter your command:
+Received file 'example.mp4' from: xi
+/msgto /activeuser /creategroup /joingroup / groupmsg /logout /p2pvideo
+Please enter your command:
+</code></pre></div></div>
+
+<h3 id="uml-diagram">UML Diagram</h3>
+
+<p><img src="/assets/image/projects/messenger/uml.png" alt="alt text" /></p>]]></content><author><name>Zeneng Zhao</name></author><category term="project" /><category term="TCP" /><category term="UDP" /><category term="Java" /><category term="Computer Networks" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">E-Invoicing Application</title><link href="http://localhost:4000/project/e-invoicing" rel="alternate" type="text/html" title="E-Invoicing Application" /><published>2023-03-13T21:50:22+10:00</published><updated>2023-03-13T21:50:22+10:00</updated><id>http://localhost:4000/project/e-invoice</id><content type="html" xml:base="http://localhost:4000/project/e-invoicing"><![CDATA[<h3 id="introduction">Introduction</h3>
 
 <p>This was my first UNSW software engineering work shop project, a SaaS e-invoicing app, includes features such as invoice creation, validation, rendering and sending.The project is deployed on AWS, it uses UBL-XML messaging over the PEPPOL network and aimed at meeting SME requirements in a standards-compliant way.</p>
 
@@ -361,11 +490,11 @@ We modelled the application with UML sequence diagrams that trace the complete u
       <td>React single-page app</td>
     </tr>
   </tbody>
-</table>]]></content><author><name>Zeneng Zhao</name></author><category term="project" /><category term="AWS" /><category term="SaaS" /><category term="Python" /><category term="React" /><category term="GPT" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Wild Life</title><link href="http://localhost:4000/photography/wild-life" rel="alternate" type="text/html" title="Wild Life" /><published>2000-01-01T00:00:00+11:00</published><updated>2000-01-01T00:00:00+11:00</updated><id>http://localhost:4000/photography/wild-life</id><content type="html" xml:base="http://localhost:4000/photography/wild-life"><![CDATA[<div class="gallery">
+</table>]]></content><author><name>Zeneng Zhao</name></author><category term="project" /><category term="AWS" /><category term="SaaS" /><category term="Python" /><category term="React" /><category term="GPT" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Wild Life</title><link href="http://localhost:4000/photography/wild-life" rel="alternate" type="text/html" title="Wild Life" /><published>2000-01-01T00:00:00+10:00</published><updated>2000-01-01T00:00:00+10:00</updated><id>http://localhost:4000/photography/wild-life</id><content type="html" xml:base="http://localhost:4000/photography/wild-life"><![CDATA[<div class="gallery">
     <img src="/assets/image/photos/wild-life/DSCF6873-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
     <img src="/assets/image/photos/wild-life/D03CDA30-9261-4988-8AEB-751621294F73-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
     <img src="/assets/image/photos/wild-life/DSCF7044-Enhanced-NR.jpg" class="lightbox-trigger" alt="" />
-</div>]]></content><author><name>Zeneng Zhao</name></author><category term="photography" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Wings of Steel</title><link href="http://localhost:4000/photography/wings-of-steel" rel="alternate" type="text/html" title="Wings of Steel" /><published>2000-01-01T00:00:00+11:00</published><updated>2000-01-01T00:00:00+11:00</updated><id>http://localhost:4000/photography/wings-of-steel</id><content type="html" xml:base="http://localhost:4000/photography/wings-of-steel"><![CDATA[<div class="gallery">
+</div>]]></content><author><name>Zeneng Zhao</name></author><category term="photography" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Wings of Steel</title><link href="http://localhost:4000/photography/wings-of-steel" rel="alternate" type="text/html" title="Wings of Steel" /><published>2000-01-01T00:00:00+10:00</published><updated>2000-01-01T00:00:00+10:00</updated><id>http://localhost:4000/photography/wings-of-steel</id><content type="html" xml:base="http://localhost:4000/photography/wings-of-steel"><![CDATA[<div class="gallery">
     <img src="/assets/image/photos/aircraft/DSCF6138.jpg" class="lightbox-trigger" alt="" />
     <img src="/assets/image/photos/aircraft/DSCF6176.jpg" class="lightbox-trigger" alt="" />
 </div>]]></content><author><name>Zeneng Zhao</name></author><category term="photography" /><summary type="html"><![CDATA[]]></summary></entry></feed>
