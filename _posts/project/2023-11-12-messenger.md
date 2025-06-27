@@ -105,4 +105,4 @@ Please enter your command:
 ![alt text](/assets/image/projects/messenger/uml.png)
 
 
-[repo]:https://github.com/Zzn021/miniDB
+[repo]:https://github.com/Zzn021/Messenger

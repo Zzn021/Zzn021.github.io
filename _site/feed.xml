@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-27T12:37:54+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-27T12:48:11+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Zzn021.github.io</title><subtitle>Welcome to my personal website, where you can learn more about me :)</subtitle><author><name>Zeneng Zhao</name></author><entry><title type="html">miniDB</title><link href="http://localhost:4000/project/minidb" rel="alternate" type="text/html" title="miniDB" /><published>2025-04-28T21:50:22+10:00</published><updated>2025-04-28T21:50:22+10:00</updated><id>http://localhost:4000/project/miniDB</id><content type="html" xml:base="http://localhost:4000/project/minidb"><![CDATA[<h3 id="introduction">Introduction</h3>
 
 <p>A simple implementation of a multi-attribute linear-hashed file structure database</p>
 
@@ -219,7 +219,7 @@ without transferring ownership.</p>
 
 <p>The application is implemented in Java (OpenJDK 11.0.21) using a client-server architecture. It consists of one central server and multiple clients. Text messages are transmitted over TCP, while video content is sent directly between clients using UDP.</p>
 
-<p><a href="https://github.com/Zzn021/miniDB">Github Repo</a></p>
+<p><a href="https://github.com/Zzn021/Messenger">Github Repo</a></p>
 
 <h3 id="design">Design</h3>
 
