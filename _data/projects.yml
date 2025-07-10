@@ -6,9 +6,11 @@ contents:
   - title: "AI Conversation Simulation"
     role: Research Thesis Project
     description: 
-      - Researched and benchmarked AI conversation models to elevate user engagement inside a virtual-reality setting.
-      - Built an immersive VR demo that marries ChatGPT with Unity, scripting the experience in C#.
-      - Curated and pre-processed a custom dialogue dataset to fine-tune the model, improving response coherence and user engagement.
+      - Researched and benchmarked leading conversational AI models to improve dialogue coherence and user engagement in a virtual-reality setting.
+      - Developed an immersive VR prototype that integrates ChatGPT with Unity, writing asynchronous C# scripts to stream real-time responses.
+      - Curated and pre-processed a custom dialogue dataset to fine-tune the selected model to raise response accuracy and naturalness.
+      - Presented technical findings and live demonstrations to academic supervisors and faculty panels, incorporating feedback into iterative releases.
+    date: Feb 2024 - Oct 2024
 
   # - title: "Data Analytics and Event Intelligence Application ([https://github.com/aw5/aw5-cli](https://github.com/aws/aws-cli))"
   - title: "Data Analytics and Event Intelligence Application"
@@ -17,13 +19,15 @@ contents:
       - Designed a modular, scalable service architecture that makes new features easy to integrate and deploy across multiple platforms.
       - Turned business and technical requirements into clear development tasks, uncovering system-level improvements along the way.
       - Built and managed real-time and batch data pipelines, delivering accurate, up-to-the-minute data for analytics and decision-making.
-      - Introduced Infrastructure-as-Code, automating cloud setup and maintenance to ensure consistent environments and eliminate manual errors.
+      - Introduced infrastructure-as-Code, automating cloud setup and maintenance to ensure consistent environments and eliminate manual errors.
+    date: Feb 2024 - May 2024
 
   # - title: "E-Invoicing ([https://pitorch.org/](https://pytorch.org/))" 
   - title: "E-Invoicing Application" 
     role: Team learder
     description: 
-      - Designed and built a full-stack invoicing application with Python and React.
-      - Ran the project in Agile sprints with Jira, breaking work into small, trackable deliverables and keeping the team on schedule and on spec.
-      - Served as both Team Lead and Product Owner, steering the product from concept through AWS deployment and coordinating development, testing, and DevOps efforts.
+      - Designed and built a Python + React invoicing system, processing 300 invoices/day in pilot testing.
+      - Drove the product and end-to-end requirements, architecture, AWS deployment, automated CI/CD with GitHub Actions.
+      - Ran four two-week Agile sprints in Jira, turning epics into trackable tasks and delivering 100% on schedule.
       - Short-listed for the SENG2021 Macquarie Prize.
+    date: Feb 2023 - May 2023

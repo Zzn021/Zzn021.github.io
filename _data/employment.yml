@@ -2,7 +2,7 @@ subject: Employment
 listing-order: 3
 icon: "/assets/image/icons/briefcase.svg"
 contents:
-  - title: Oriental Electronic, China
+  - title: Software Engineer, Oriental Electronic, China
     role: Intern
     description:
       - Automated multi-node log analysis with Python scripts, extracting key performance metrics and generating visual timelines that reduced incident-diagnosis time by 30 %.
@@ -10,9 +10,10 @@ contents:
       - Reviewed and tested system-module code across design and diagnostics teams; identified redundant patterns, validated edge cases, and documented findings on git to support cleaner releases and smoother cross-team collaboration.
     date: Dec. 2024 - Mar 2025
 
-  - title: Airport Services, China Southern Airlines, Sydney
+  - title: Data Analytics, China Southern Airlines, Sydney
     role: Intern
     description:
-      - Analyzed flight-delay datasets in Python, uncovering patterns that informed strategies to reduce disruptions and improve the passenger experience.
-      - Expanded responsibilities to include tech-focused tasks, using specialized software to manage customer complaints and track real-time airport operations.
+      - Used Python and Pandas to load, clean, and summarise daily flight-delay logs, flagging common delay categories for the operations team.
+      - Generated concise CSV/Excel reports and simple visual summaries that supported the team's weekly on-time-performance reviews.
+      - Co-ordinated daily with ground-handling crews, gate agents and other airport stakeholders to keep boarding baggage and turnaround operations on schedule.
     date: Feb. 2024 - Apr 2024
