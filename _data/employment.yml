@@ -2,7 +2,7 @@ subject: Employment
 listing-order: 3
 icon: "/assets/image/icons/briefcase.svg"
 contents:
-  - title: Software Engineer, Oriental Electronic, China
+  - title: Software Engineer, Dongfang Electronics, China
     role: Intern
     description:
       - Automated multi-node log analysis with Python scripts, extracting key performance metrics and generating visual timelines that reduced incident-diagnosis time by 30 %.
