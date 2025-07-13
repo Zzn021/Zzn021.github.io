@@ -10,7 +10,7 @@ contents:
       - Reviewed and tested system-module code across design and diagnostics teams; identified redundant patterns, validated edge cases, and documented findings on git to support cleaner releases and smoother cross-team collaboration.
     date: Dec. 2024 - Mar 2025
 
-  - title: Data Analytics, China Southern Airlines, Sydney
+  - title: Data Analyst, China Southern Airlines, Sydney
     role: Intern
     description:
       - Used Python and Pandas to load, clean, and summarise daily flight-delay logs, flagging common delay categories for the operations team.
