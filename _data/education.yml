@@ -2,14 +2,14 @@ subject: Education
 listing-order: 1
 icon: "/assets/image/icons/graduation-cap.svg"
 contents:
-  - title: UNSW, Bachelor of Engineering (Hons)
+  - title: Bachelor of Engineering (Hons)(Software Engineering), UNSW
     # description:
     #   - Design of a method to build a probabilistic generative model
     #   - Development of model calibration algorithm for cross-domain few-shot learning
     date: Feb. 2021 - May. 2025
-  - title: All Saints Anglican School
+  - title: All Saints Anglican School, Gold Coast
     # description:
     #   - Development of deep learning algorithms for automatically tracking the facial expressions
     #   - Optimizing parameter efficient fine tuning for fairness in medical image analysis
-    grade: 'ATAR: 95.7'
+    # grade: 'ATAR: 95.7'
     date: 2017 - 2020

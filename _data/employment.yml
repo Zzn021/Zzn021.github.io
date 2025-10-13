@@ -5,15 +5,15 @@ contents:
   - title: Software Engineer, Dongfang Electronics, China
     role: Intern
     description:
-      - Automated multi-node log analysis with Python scripts, extracting key performance metrics and generating visual timelines that reduced incident-diagnosis time by 30 %.
-      - Optimized SQL queries and data-model logic for internal monitoring dashboards, improving real-time metric accuracy and usability for operations and support teams.
-      - Reviewed and tested system-module code across design and diagnostics teams; identified redundant patterns, validated edge cases, and documented findings on git to support cleaner releases and smoother cross-team collaboration.
+      - Automated anomaly detection in smart-grid system logs with Python, reducing manual review effort for operations engineers.
+      - Assisted in building real-time monitoring dashboards, writing SQL queries and integrating data pipelines to improve reporting accuracy.
+      - Collaborated with cross-functional teams in Agile sprints, contributing to debugging and presenting progress in sprint reviews
+      - Documented workflows and knowledge hand-offs in internal knowledge systems, improving release consistency and easing onboarding for new team members.
     date: Dec. 2024 - Mar 2025
 
   - title: Data Analyst, China Southern Airlines, Sydney
     role: Intern
     description:
-      - Used Python and Pandas to load, clean, and summarise daily flight-delay logs, flagging common delay categories for the operations team.
-      - Generated concise CSV/Excel reports and simple visual summaries that supported the team's weekly on-time-performance reviews.
-      - Co-ordinated daily with ground-handling crews, gate agents and other airport stakeholders to keep boarding baggage and turnaround operations on schedule.
-    date: Feb. 2024 - Apr 2024
+      - Cleaned and analysed large volumes of flight-delay logs with Python (Pandas), extracting insights into recurring delay patterns.
+      - Automated generation of CSV/Excel reports and simple visual summaries that supported the team's weekly on-time-performance reviews.
+      - Partnered with the operations team to translate data findings into actionable recommendations for improving turnaround efficiency.

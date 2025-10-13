@@ -1,0 +1,12 @@
+subject: Certifications
+listing-order: 5
+icon: "/assets/image/icons/certification.svg"
+contents:
+  - title: AWS Certified Solutions Architect - Associate
+    date: 2025
+    description: "
+      ![devicon](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg)
+    "
+
+
+          
